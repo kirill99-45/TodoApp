@@ -1,0 +1,142 @@
+.wrapper {
+  width: 500px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 5px #00000087;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #00000021;
+}
+
+.header__button {
+  background: inherit;
+  border: 1px solid #00000021;
+  padding: 5px 20px;
+  border-radius: 12px;
+  outline: none;
+  height: 100%;
+  font-size: 20px;
+  transition: 0.2s;
+}
+
+.header__button:hover {
+  background: #e3dede73;
+  transition: 0.2s;
+}
+
+.header__button:active {
+  transform: scale(98%);
+}
+
+.header__button:focus {
+  background: #e3dede73;
+}
+
+.header__input {
+  padding: 10px;
+  width: 100%;
+  border: none;
+  font-size: 20px;
+}
+
+.header__input::placeholder {
+  font-style: italic;
+  color: #00000021;
+}
+
+.header__input:focus {
+  outline: none;
+}
+
+.main {
+  border-bottom: 1px solid #00000021;
+}
+
+.tasks {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.tasks__task {
+  padding: 20px;
+  list-style: none;
+  border-bottom: 1px solid #00000021
+}
+
+.tasks__task:last-child {
+  border: none;
+}
+
+.tasks__checkbox {
+  display: none;
+}
+
+.tasks__custom-checkbox {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  font-size: 20px;
+}
+
+.tasks__checkbox+label::before {
+  content: '';
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border: 1px solid #adb5bd;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+
+.tasks__checkbox:checked+label::before {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='green' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+}
+
+.tasks__checkbox:checked+label {
+  text-decoration: line-through;
+  color: #00000021;
+}
+
+
+.footer {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.footer__filters {
+  display: flex;
+  list-style: none;
+  column-gap: 10px;
+}
+
+.footer__filter {
+  padding: 5px;
+  background: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.footer__filter:hover {
+  outline: 1px solid;
+}
+
+.footer__filter_active {
+  outline: 1px solid black;
+}
+
+.footer__button {
+  background: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
