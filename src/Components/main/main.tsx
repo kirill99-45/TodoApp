@@ -10,23 +10,19 @@ interface IProps {
   filter : string,
 }
 
-export const Main: React.FC<IProps> = ({ todos, setTodos, filter }) => {
+export const Main: React.FC<IProps> = ({ todos = [], setTodos, filter }) => {
 
   const [resTodos, setResTodos] = useState(todos)
 
-  const inputHandler = (id: number) => {
-    setTodos(todos.map(item => {
-      if (item.id !== id) return item
-      return {
-        ...item,
-        isDone : !item.isDone,
-      }
-    }))
-  }
-
   const isTaskDone = (isDone: boolean, id: number) => {
     if (!isDone) {
-      inputHandler(id)
+      setTodos(todos.map(item => {
+        if (item.id !== id) return item
+        return {
+          ...item,
+          isDone : !item.isDone,
+        }
+      }))
     }
   }
 
@@ -52,6 +48,7 @@ export const Main: React.FC<IProps> = ({ todos, setTodos, filter }) => {
                   id={todo.id.toString()}
                   className='tasks__checkbox'
                   checked={todo.isDone}
+                  readOnly={true}
                 />
                 <label
                   htmlFor={todo.id.toString()}

@@ -1,4 +1,5 @@
 import IconArrowDown from './icons/arrow-down.svg';
+import { Input } from './input';
 
 import{ useState, Dispatch, SetStateAction } from 'react';
 
@@ -12,28 +13,21 @@ interface IProps {
 }
 
 
-
 export const Header: React.FC<IProps> = ({ setTodos, todos }) => {
 
-  const [input, setInput] = useState<string>('')
+  const [inputValue, setInputValue] = useState<string>('')
 
   const buttonHandler = () => {
-    if (input.trim().length > 0) {
-      setTodos([{ id : Date.now(), task : input, isDone : false}, ...todos])
-      setInput('')
+    if (inputValue.trim().length > 0) {
+      setTodos([{ id : Date.now(), task : inputValue, isDone : false}, ...todos])
+      setInputValue('')
     }
   }
 
   return (
     <header className='header'>
       <img src={IconArrowDown} alt='arrow' />
-      <input
-        type='text'
-        placeholder='What needs to be done?'
-        className='header__input'
-        value={input}
-        onChange={(event) => setInput(event.currentTarget.value)}
-      />
+      <Input placeholder='What needs to be done?' value={inputValue} onChange={setInputValue}/>
       <button type='button' className='header__button' onClick={buttonHandler}>Создать</button>
     </header>
   )
