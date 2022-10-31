@@ -1,0 +1,36 @@
+.footer {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.footer__filters {
+  display: flex;
+  list-style: none;
+  column-gap: 10px;
+}
+
+.footer__filter {
+  padding: 5px;
+  background: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.footer__filter:hover {
+  outline: 1px solid;
+}
+
+.footer__filter_active {
+  outline: 1px solid black;
+}
+
+.footer__button {
+  background: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
